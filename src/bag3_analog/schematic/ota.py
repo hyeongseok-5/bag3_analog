@@ -64,17 +64,18 @@ class bag3_analog__ota(Module):
             dictionary from parameter names to descriptions.
         """
         return dict(
-            wp='pmos width',
-            wn='nmos width',
+            w_p='pmos width',
+            w_n='nmos width',
             lch='channel length',
             seg_diff='number of diff pair segments',
             seg_load='number of load segments',
             seg_iref='tail current reference segments',
             seg_tail='tail segments',
-            threshold='transistor threshold',
+            th_p='pmos transistor threshold',
+            th_n='nmos transistor threshold',
         )
 
-    def design(self, wn: int, wp: int, lch: int, seg_diff: int, seg_load: int, seg_iref: int, seg_tail: int, threshold: str) -> None:
+    def design(self, w_n: int, w_p: int, lch: int, seg_diff: int, seg_load: int, seg_iref: int, seg_tail: int, th_p: str, th_n: str) -> None:
         """To be overridden by subclasses to design this module.
 
         This method should fill in values for all parameters in
@@ -90,9 +91,9 @@ class bag3_analog__ota(Module):
         restore_instance()
         array_instance()
         """
-        self.design_transistor('XDIFFN', wn, lch, seg=seg_diff, intent=threshold)
-        self.design_transistor('XDIFFP', wn, lch, seg=seg_diff, intent=threshold)
-        self.design_transistor('XLOADN', wp, lch, seg=seg_load, intent=threshold)
-        self.design_transistor('XLOADP', wp, lch, seg=seg_load, intent=threshold)
-        self.design_transistor('XTAIL', wn, lch, seg=seg_tail, intent=threshold)
-        self.design_transistor('XIREF', wn, lch, seg=seg_iref, intent=threshold)
+        self.design_transistor('XDIFFN', w_n, lch, seg=seg_diff, intent=th_n)
+        self.design_transistor('XDIFFP', w_n, lch, seg=seg_diff, intent=th_n)
+        self.design_transistor('XLOADN', w_p, lch, seg=seg_load, intent=th_p)
+        self.design_transistor('XLOADP', w_p, lch, seg=seg_load, intent=th_p)
+        self.design_transistor('XTAIL', w_n, lch, seg=seg_tail, intent=th_n)
+        self.design_transistor('XIREF', w_n, lch, seg=seg_iref, intent=th_n)
