@@ -20,45 +20,6 @@ terminals:
           - 244
     stype: 1
     ttype: 2
-  v_inm:
-    obj:
-      - 0
-      - layer: 229
-        purpose: 4294967295
-        net: ""
-        bbox:
-          - -4
-          - 76
-          - 4
-          - 84
-    stype: 0
-    ttype: 0
-  v_inp:
-    obj:
-      - 0
-      - layer: 229
-        purpose: 4294967295
-        net: ""
-        bbox:
-          - -4
-          - 156
-          - 4
-          - 164
-    stype: 0
-    ttype: 0
-  v_tail_g:
-    obj:
-      - 0
-      - layer: 229
-        purpose: 4294967295
-        net: ""
-        bbox:
-          - -4
-          - 116
-          - 4
-          - 124
-    stype: 0
-    ttype: 0
   VSS:
     obj:
       - 0
@@ -72,19 +33,6 @@ terminals:
           - 4
     stype: 2
     ttype: 2
-  v_tail:
-    obj:
-      - 0
-      - layer: 229
-        purpose: 4294967295
-        net: ""
-        bbox:
-          - 176
-          - 116
-          - 184
-          - 124
-    stype: 0
-    ttype: 1
   i_outm:
     obj:
       - 0
@@ -111,6 +59,58 @@ terminals:
           - 104
     stype: 0
     ttype: 1
+  v_inm:
+    obj:
+      - 0
+      - layer: 229
+        purpose: 4294967295
+        net: ""
+        bbox:
+          - -4
+          - 76
+          - 4
+          - 84
+    stype: 0
+    ttype: 0
+  v_inp:
+    obj:
+      - 0
+      - layer: 229
+        purpose: 4294967295
+        net: ""
+        bbox:
+          - -4
+          - 156
+          - 4
+          - 164
+    stype: 0
+    ttype: 0
+  v_tail:
+    obj:
+      - 0
+      - layer: 229
+        purpose: 4294967295
+        net: ""
+        bbox:
+          - 176
+          - 116
+          - 184
+          - 124
+    stype: 0
+    ttype: 1
+  v_tail_g:
+    obj:
+      - 0
+      - layer: 229
+        purpose: 4294967295
+        net: ""
+        bbox:
+          - -4
+          - 116
+          - 4
+          - 124
+    stype: 0
+    ttype: 0
 shapes:
   -
     - 5
@@ -405,22 +405,22 @@ shapes:
 instances:
   {}
 props:
-  pin#:
-    - 0
-    - 15
   interfaceLastChanged:
     - 4
     - time_val: 1648515456
-  vendorName:
-    - 3
-    - ""
   partName:
     - 3
     - gm_stage
+  pin#:
+    - 0
+    - 15
   portOrder:
     - 5
     - name: ILList
       bin_val: ("i_outm" "i_outp" "v_tail" "VDD" "VSS" "v_inm" "v_inp" "v_tail_g")
+  vendorName:
+    - 3
+    - ""
 app_defs:
   _dbLastSavedCounter:
     - 0

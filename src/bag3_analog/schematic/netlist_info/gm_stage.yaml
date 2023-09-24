@@ -3,26 +3,26 @@ cell_name: gm_stage
 view_name: schematic
 bbox:
   - -439
-  - -195
+  - -194
   - 188
   - 180
 terminals:
-  v_inp:
+  VDD:
     obj:
       - 1
       - inst:
           lib_name: basic
-          cell_name: ipin
-          view_name: symbol
+          cell_name: iopin
+          view_name: symbolr
           xform:
-            - -350
-            - 120
+            - -300
+            - 170
             - R0
           bbox:
-            - -407
-            - 94
-            - -350
-            - 130
+            - -361
+            - 144
+            - -290
+            - 180
           connections:
             {}
           params:
@@ -33,8 +33,8 @@ terminals:
           purpose: 237
           net: ""
           origin:
-            - -380
-            - 120
+            - -325
+            - 170
           alignment: 7
           orient: R0
           font: 5
@@ -44,47 +44,8 @@ terminals:
           drafting: true
           attr_type: 0
           format: 1
-    stype: 0
-    ttype: 0
-  v_inm:
-    obj:
-      - 1
-      - inst:
-          lib_name: basic
-          cell_name: ipin
-          view_name: symbol
-          xform:
-            - -350
-            - 80
-            - R0
-          bbox:
-            - -407
-            - 54
-            - -350
-            - 90
-          connections:
-            {}
-          params:
-            {}
-          is_primitive: true
-        attr:
-          layer: 229
-          purpose: 237
-          net: ""
-          origin:
-            - -380
-            - 80
-          alignment: 7
-          orient: R0
-          font: 5
-          height: 10
-          overbar: false
-          visible: true
-          drafting: true
-          attr_type: 0
-          format: 1
-    stype: 0
-    ttype: 0
+    stype: 1
+    ttype: 2
   VSS:
     obj:
       - 1
@@ -163,7 +124,46 @@ terminals:
           format: 1
     stype: 0
     ttype: 1
-  v_tail_g:
+  i_outp:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: opin
+          view_name: symbol
+          xform:
+            - -260
+            - 120
+            - R0
+          bbox:
+            - -260
+            - 94
+            - -203
+            - 130
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -235
+            - 120
+          alignment: 1
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 1
+  v_inm:
     obj:
       - 1
       - inst:
@@ -172,13 +172,13 @@ terminals:
           view_name: symbol
           xform:
             - -350
-            - 40
+            - 80
             - R0
           bbox:
             - -407
-            - 14
+            - 54
             - -350
-            - 50
+            - 90
           connections:
             {}
           params:
@@ -190,7 +190,46 @@ terminals:
           net: ""
           origin:
             - -380
-            - 40
+            - 80
+          alignment: 7
+          orient: R0
+          font: 5
+          height: 10
+          overbar: false
+          visible: true
+          drafting: true
+          attr_type: 0
+          format: 1
+    stype: 0
+    ttype: 0
+  v_inp:
+    obj:
+      - 1
+      - inst:
+          lib_name: basic
+          cell_name: ipin
+          view_name: symbol
+          xform:
+            - -350
+            - 120
+            - R0
+          bbox:
+            - -407
+            - 94
+            - -350
+            - 130
+          connections:
+            {}
+          params:
+            {}
+          is_primitive: true
+        attr:
+          layer: 229
+          purpose: 237
+          net: ""
+          origin:
+            - -380
+            - 120
           alignment: 7
           orient: R0
           font: 5
@@ -241,22 +280,22 @@ terminals:
           format: 1
     stype: 0
     ttype: 1
-  VDD:
+  v_tail_g:
     obj:
       - 1
       - inst:
           lib_name: basic
-          cell_name: iopin
-          view_name: symbolr
+          cell_name: ipin
+          view_name: symbol
           xform:
-            - -300
-            - 170
+            - -350
+            - 40
             - R0
           bbox:
-            - -361
-            - 144
-            - -290
-            - 180
+            - -407
+            - 14
+            - -350
+            - 50
           connections:
             {}
           params:
@@ -267,8 +306,8 @@ terminals:
           purpose: 237
           net: ""
           origin:
-            - -325
-            - 170
+            - -380
+            - 40
           alignment: 7
           orient: R0
           font: 5
@@ -278,47 +317,8 @@ terminals:
           drafting: true
           attr_type: 0
           format: 1
-    stype: 1
-    ttype: 2
-  i_outp:
-    obj:
-      - 1
-      - inst:
-          lib_name: basic
-          cell_name: opin
-          view_name: symbol
-          xform:
-            - -260
-            - 120
-            - R0
-          bbox:
-            - -260
-            - 94
-            - -203
-            - 130
-          connections:
-            {}
-          params:
-            {}
-          is_primitive: true
-        attr:
-          layer: 229
-          purpose: 237
-          net: ""
-          origin:
-            - -235
-            - 120
-          alignment: 1
-          orient: R0
-          font: 5
-          height: 10
-          overbar: false
-          visible: true
-          drafting: true
-          attr_type: 0
-          format: 1
     stype: 0
-    ttype: 1
+    ttype: 0
 shapes:
   -
     - 7
@@ -645,20 +645,20 @@ instances:
       - 188
       - 35
     connections:
-      S: v_tail
-      D: i_outp
       B: VSS
+      D: i_outp
       G: v_inm
+      S: v_tail
     params:
       l:
         - 3
         - 18n
-      w:
-        - 3
-        - 4
       nf:
         - 3
         - 1
+      w:
+        - 3
+        - 4
     is_primitive: true
   XP:
     lib_name: BAG_prim
@@ -674,20 +674,20 @@ instances:
       - 12
       - 35
     connections:
-      S: v_tail
-      D: i_outm
       B: VSS
+      D: i_outm
       G: v_inp
+      S: v_tail
     params:
       l:
         - 3
         - 18n
-      w:
-        - 3
-        - 4
       nf:
         - 3
         - 1
+      w:
+        - 3
+        - 4
     is_primitive: true
   XTAIL:
     lib_name: BAG_prim
@@ -703,22 +703,31 @@ instances:
       - 92
       - -85
     connections:
-      S: VSS
-      D: v_tail
       B: VSS
+      D: v_tail
       G: v_tail_g
+      S: VSS
     params:
       l:
         - 3
         - 18n
-      w:
-        - 3
-        - 4
       nf:
         - 3
         - 1
+      w:
+        - 3
+        - 4
     is_primitive: true
 props:
+  connectivityLastUpdated:
+    - 0
+    - 1774
+  lastSchematicExtraction:
+    - 4
+    - time_val: 1688779925
+  net#:
+    - 0
+    - 3
   pin#:
     - 0
     - 8
@@ -728,18 +737,9 @@ props:
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
-  lastSchematicExtraction:
-    - 4
-    - time_val: 1688779925
-  connectivityLastUpdated:
-    - 0
-    - 1774
   schXtrVersion:
     - 3
     - sch.10.0
-  net#:
-    - 0
-    - 3
 app_defs:
   _dbLastSavedCounter:
     - 0
